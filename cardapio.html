@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>LA BELLA 🍕 – Cardápio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff3e0;
+      display: flex;
+    }
+    aside {
+      width: 260px;
+      background: linear-gradient(to bottom, #ff0000, #ffa500, #ffff00);
+      color: #fff;
+      padding: 30px 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    aside h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+    }
+    aside nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      margin: 20px 0;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+    aside nav a:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    main {
+      flex: 1;
+      padding: 60px;
+    }
+    h2 {
+      font-size: 36px;
+      color: #d62828;
+      margin-bottom: 20px;
+    }
+    .pizza {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    .pizza img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 30px;
+    }
+    .pizza-info {
+      flex: 1;
+    }
+    .pizza-info h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .pizza-info p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    input[type="number"] {
+      width: 80px;
+      padding: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #d62828;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #carrinho {
+      margin-top: 40px;
+      border-top: 2px solid #d62828;
+      padding-top: 20px;
+    }
+    #carrinho ul {
+      list-style: none;
+      padding: 0;
+    }
+    #carrinho li {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    #total {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<aside>
+  <h1>🍕 LA BELLA</h1>
+  <nav>
+    <a href="index.html">🏠 Início</a>
+    <a href="cardapio.html">📋 Cardápio</a>
+    <a href="rodizio.html">🍽️ Rodízio/Eventos</a>
+    <a href="pagamento.html">💳 Pagamento</a>
+    <a href="galeria.html">📸 Galeria</a>
+  </nav>
+</aside>
+
+<main>
+  <h2>Cardápio Interativo 🍕</h2>
+
+  <!-- Exemplo de pizza -->
+  <div class="pizza">
+    <img src="pizzaportuguesa.png" alt="Pizza Portuguesa" />
+    <div class="pizza-info">
+      <h3>Portuguesa</h3>
+      <p>Presunto, ovo, cebola, azeitona e mussarela – R$ 39,90</p>
+      <input type="number" min="1" value="1" id="qtd-portuguesa" />
+      <button onclick="adicionar('Portuguesa', 39.90, 'qtd-portuguesa')">Adicionar</button>
+    </div>
+  </div>
+
+  <!-- Repita para os outros sabores -->
+  <div class="pizza">
+    <img src="pizzamargurerita.png" alt="Pizza Marguerita" />
+    <div class="pizza-info">
+      <h3>Marguerita</h3>
+      <p>Tomate, manjericão e mussarela – R$ 38,90</p>
+      <input type="number" min="1" value="1" id="qtd-marguerita" />
+      <button onclick="adicionar('Marguerita', 38.90, 'qtd-marguerita')">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="pizza">
+    <img src="frangocatupiry.png" alt="Pizza Frango com Catupiry" />
+    <div class="pizza-info">
+      <h3>Frango com Catupiry</h3>
+      <p>Frango desfiado, catupiry e milho – R$ 42,90</p>
+      <input type="number" min="1" value="1" id="qtd-frango" />
+      <button onclick="adicionar('Frango com Catupiry', 42.90, 'qtd-frango')">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="pizza">
+    <img src="pizzapeperoni.png" alt="Pizza Pepperoni" />
+    <div class="pizza-info">
+      <h3>Pepperoni</h3>
+      <p>Pepperoni e mussarela – R$ 40,90</p>
+      <input type="number" min="1" value="1" id="qtd-pepperoni" />
+      <button onclick="adicionar('Pepperoni', 40.90, 'qtd-pepperoni')">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="pizza">
+    <img src="pizzachocolate.png" alt="Pizza de Chocolate" />
+    <div class="pizza-info">
+      <h3>Chocolate</h3>
+      <p>Chocolate derretido e granulados – R$ 36,90</p>
+      <input type="number" min="1" value="1" id="qtd-chocolate" />
+      <button onclick="adicionar('Chocolate', 36.90, 'qtd-chocolate')">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="pizza">
+    <img src="pizzabanana.png" alt="Pizza Banana com Canela" />
+    <div class="pizza-info">
+      <h3>Banana com Canela</h3>
+      <p>Banana, canela e leite condensado – R$ 36,90</p>
+      <input type="number" min="1" value="1" id="qtd-banana" />
+      <button onclick="adicionar('Banana com Canela', 36.90, 'qtd-banana')">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="pizza">
+    <img src="pizzalabella.png" alt="Pizza La Bella Especial" />
+    <div class="pizza-info">
+      <h3>La Bella Especial</h3>
+      <p>Tomate seco, rúcula, parmesão, mussarela e azeite trufado – R$ 44,90</p>
+      <input type="number" min="1" value="1" id="qtd-labela" />
+      <button onclick="adicionar('La Bella Especial', 44.90, 'qtd-labela')">Adicionar</button>
+    </div>
+  </div>
+
+  <div id="carrinho">
+    <h2>🛒 Seu Pedido</h2>
+    <ul id="lista"></ul>
+    <p id="total">Total: R$ 0.00</p>
+    <button onclick="finalizar()">Finalizar Pedido</button>
+  </div>
+</main>
+
+<script>
+  let pedido = [];
+  let total = 0;
+
+  function adicionar(sabor, preco, inputId) {
+    const qtd = parseInt(document.getElementById(inputId).value);
+    if (qtd > 0) {
+      // Verifica se o item já existe no carrinho
+      const existente = pedido.find(item => item.sabor === sabor);
+      if (existente) {
+        existente.qtd += qtd;
+      } else {
+        pedido.push({ sabor, qtd, preco });
+      }
+      atualizarCarrinho();
+    }
+  }
+
+  function atualizarCarrinho() {
+    const lista = document.getElementById("lista");
+    lista.innerHTML = "";
+    total = 0;
+
+    pedido.forEach(item => {
+      const subtotal = item.qtd * item.preco;
+      total += subtotal;
+      const li = document.createElement("li");
+      li.textContent = `${item.qtd}x ${item.sabor} – R$ ${subtotal.toFixed(2)}`;
+      lista.appendChild(li);
+    });
+
+    document.getElementById("total").innerText = `Total: R$ ${total.toFixed(2)}`;
+  }
+
+  function finalizar() {
+    localStorage.setItem("valorPedido", total.toFixed(2));
+    window.location.href = "pagamento.html";
+  }
+</script>

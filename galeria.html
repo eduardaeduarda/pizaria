@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>LA BELLA 🍕 – Galeria</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff3e0;
+      display: flex;
+    }
+    aside {
+      width: 260px;
+      background: linear-gradient(to bottom, #ff0000, #ffa500, #ffff00);
+      color: #fff;
+      padding: 30px 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    aside h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+    }
+    aside nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      margin: 20px 0;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+    aside nav a:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    main {
+      flex: 1;
+      padding: 60px;
+    }
+    h2 {
+      font-size: 36px;
+      color: #d62828;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<aside>
+  <h1>🍕 LA BELLA</h1>
+  <nav>
+    <a href="index.html">🏠 Início</a>
+    <a href="cardapio.html">📋 Cardápio</a>
+    <a href="rodizio.html">🍽️ Rodízio/Eventos</a>
+    <a href="pagamento.html">💳 Pagamento</a>
+    <a href="galeria.html">📸 Galeria</a>
+  </nav>
+</aside>
+
+<main>
+  <h2>Conheça nosso espaço 📸</h2>
+  <p>Veja como é o ambiente da LA BELLA e inspire-se para realizar seu evento conosco! 🎉</p>
+
+  <div class="galeria">
+    <img src="inferior.png" alt="Ambiente interno da pizzaria" />
+    <img src="areaexterna.png" alt="Área externa decorada" />
+    <img src="evento.png" alt="Evento de aniversário" />
+    <img src="confreternizaçao.png" alt="Confraternização de empresa" />
+    <img src="internadecorada.png" alt="Pizza La Bella Especial" />
+    <img src="sem decoraçao.png" alt="Pizza de Banana com Canela" />
+  </div>
+</main>
+
+</body>
+</html>
