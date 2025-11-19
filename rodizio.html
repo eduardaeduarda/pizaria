@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>LA BELLA 🍕 – Rodízio e Eventos</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff3e0;
+      display: flex;
+    }
+    aside {
+      width: 260px;
+      background: linear-gradient(to bottom, #ff0000, #ffa500, #ffff00);
+      color: #fff;
+      padding: 30px 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    aside h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+    }
+    aside nav a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      margin: 20px 0;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+    aside nav a:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    main {
+      flex: 1;
+      padding: 60px;
+    }
+    h2 {
+      font-size: 36px;
+      color: #d62828;
+      margin-bottom: 20px;
+    }
+    p, label {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    input, select {
+      display: block;
+      margin: 10px 0 20px;
+      padding: 10px;
+      font-size: 18px;
+      width: 100%;
+      max-width: 400px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #d62828;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #resultado {
+      font-size: 22px;
+      margin-top: 20px;
+      color: #d62828;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<aside>
+  <h1>🍕 LA BELLA</h1>
+  <nav>
+    <a href="index.html">🏠 Início</a>
+    <a href="cardapio.html">📋 Cardápio</a>
+    <a href="rodizio.html">🍽️ Rodízio/Eventos</a>
+    <a href="pagamento.html">💳 Pagamento</a>
+    <a href="galeria.html">📸 Galeria</a>
+  </nav>
+</aside>
+
+<main>
+  <h2>Rodízio 🍕</h2>
+  <p>🕕 Todos os dias das 18h às 23h</p>
+  <p>👨 Adulto: R$ 49,90</p>
+  <p>🧒 Criança (até 10 anos): R$ 24,95</p>
+  <p>🧃 Bebidas à parte</p>
+
+  <h2>Simule o valor da reserva</h2>
+  <label for="adultos">Número de adultos:</label>
+  <input type="number" id="adultos" placeholder="Ex: 5" />
+  <label for="criancas">Número de crianças:</label>
+  <input type="number" id="criancas" placeholder="Ex: 3" />
+  <button onclick="calcularReserva()">Calcular valor</button>
+  <div id="resultado"></div>
+
+  <h2>Reserva de Eventos 🎉</h2>
+  <form>
+    <input type="text" placeholder="Tipo de evento (aniversário, confraternização...)" required />
+    <input type="number" placeholder="Número de convidados" required />
+    <input type="datetime-local" required />
+    <button>Reservar Evento</button>
+  </form>
+</main>
+
+<script>
+  function calcularReserva() {
+    const adultos = parseInt(document.getElementById('adultos').value) || 0;
+    const criancas = parseInt(document.getElementById('criancas').value) || 0;
+    const total = (adultos * 49.90) + (criancas * 24.95);
+    document.getElementById('resultado').innerText = `💰 Valor estimado: R$ ${total.toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>
